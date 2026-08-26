@@ -36,6 +36,6 @@ export class CheckoutPage {
   }
 
   async verifyOrderConfirmation(): Promise<void> {
-    await expect(this.confirmationTitle).toHaveText('!Thank you for your order!');
+    await expect(this.confirmationTitle).toHaveText('Thank you for your order!');
   }
 }
