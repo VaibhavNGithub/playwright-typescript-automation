@@ -3,6 +3,7 @@ name: Playwright Tests
 on:
   push:
   pull_request:
+  
   workflow_dispatch:
     inputs:
       test_suite:
@@ -14,6 +15,9 @@ on:
           - smoke
           - sanity
           - regression
+
+  schedule:
+    - cron: '30 16 * * *'
 
 jobs:
   test:
@@ -41,7 +45,12 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npm run test:${{ inputs.test_suite || 'smoke' }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            npm run test:regression
+          else
+            npm run test:${{ inputs.test_suite || 'smoke' }}
+          fi
 
       - name: Upload Playwright report
         if: always()
