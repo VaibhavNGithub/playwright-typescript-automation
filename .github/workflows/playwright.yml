@@ -4,6 +4,16 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      test_suite:
+        description: 'Select test suite'
+        required: true
+        default: 'smoke'
+        type: choice
+        options:
+          - smoke
+          - sanity
+          - regression
 
 jobs:
   test:
@@ -30,8 +40,8 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps
 
-      - name: Run Smoke tests
-        run: npm run test:smoke
+      - name: Run Playwright tests
+        run: npm run test:${{ inputs.test_suite }}
 
       - name: Upload Playwright report
         if: always()
