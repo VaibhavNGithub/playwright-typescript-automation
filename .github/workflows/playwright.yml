@@ -15,6 +15,7 @@ on:
           - smoke
           - sanity
           - regression
+          - all
 
   schedule:
     - cron: '30 16 * * *'
@@ -48,6 +49,8 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
             npm run test:regression
+          elif [ "${{ inputs.test_suite }}" = "all" ]; then
+            npm test
           else
             npm run test:${{ inputs.test_suite || 'smoke' }}
           fi
