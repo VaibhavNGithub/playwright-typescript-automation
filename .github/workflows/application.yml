@@ -1,0 +1,29 @@
+name: Application CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout application code
+        uses: actions/checkout@v4
+
+      - name: Build Application
+        run: echo "Building application..."
+
+      - name: Deploy to QA
+        run: echo "Deploying application to QA..."
+
+      - name: Deployment successful
+        run: echo "Application deployed successfully to QA"
+
+      - name: Trigger Playwright Smoke Tests
+        run: |
+          gh workflow run playwright.yml \
+            --ref main \
+            -f test_suite=smoke
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
