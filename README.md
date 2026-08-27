@@ -1,22 +1,36 @@
 # Playwright Senior UI Automation Framework
 
-Practice website: SauceDemo.
+A scalable UI automation framework built using **Playwright with TypeScript**.
 
-## Setup
+**Practice Application:** SauceDemo
 
-1. Open this project in VS Code.
-2. Run `npm install`.
-3. Run `npx playwright install`.
-4. Run `npx playwright test`.
-5. Run `npm run test:headed`.
-6. Run `npm run test:smoke`.
-7. Run `npm run test:regression`.
-8. Run `npm run test:serial`.
+## Tech Stack
 
-Allure:
-- `npm run allure:generate`
-- `npm run allure:open`
+- Playwright
+- TypeScript
+- Node.js
+- Git & GitHub
+- GitHub Actions
+- Docker
+- Excel Test Data
 
-Includes POM, fixtures, Excel data, dynamic data generation, QA/STG/UAT/PROD configuration, tags, parallel/serial execution, screenshots, video, trace and Allure reporting.
+## Framework Features
 
-`.env` is ignored by Git; `.env.example` is committed as the configuration template.
+- Page Object Model (POM)
+- Custom Playwright Fixtures
+- Data-Driven Testing using Excel
+- Dynamic Test Data Generation
+- Reusable Utilities and Assertions
+- Environment-based configuration (QA/STG/UAT/PROD)
+- Smoke, Sanity and Regression test tagging
+- Parallel and serial test execution
+- Authentication using Playwright storage state
+- Screenshots on failure
+- Video recording on failure
+- Trace on failure
+- Playwright HTML Reports
+- Allure report
+- GitHub Actions CI/CD integration
+- Docker-based Playwright execution
+- GitHub Actions artifacts
+
