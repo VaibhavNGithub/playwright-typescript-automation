@@ -2,7 +2,7 @@
 
 A scalable UI automation framework built using **Playwright with TypeScript**.
 
-**Practice Application:** SauceDemo
+**Practice Application:** SauceDemo - Version A
 
 ## Tech Stack
 
