@@ -34,3 +34,6 @@ A scalable UI automation framework built using **Playwright with TypeScript**.
 - Docker-based Playwright execution
 - GitHub Actions artifacts
 
+
+## Git Practice
+This section is added while practicing Git branching and pull requests.
